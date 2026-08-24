@@ -1,0 +1,6 @@
+if SHIELD_SPLITV3
+
+config ZMK_KEYBOARD_NAME
+    default "SplitV3"
+
+endif
