@@ -1,2 +1,3 @@
 config SHIELD_SPLITV3
     def_bool $(shields_list_contains, SplitV3)
+    select SPI
