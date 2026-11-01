@@ -21,3 +21,4 @@
 include:
   - board: nice_nano@1//zmk
     shield: SplitV3
+    artifact-name: SplitV3-nice-nano-v1-zmk
