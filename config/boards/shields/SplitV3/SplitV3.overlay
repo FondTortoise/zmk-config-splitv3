@@ -48,38 +48,3 @@
         >;
     };
 };
-
-&i2c0 {
-    status = "okay";
-    mcp: mcp23017@20 {
-        compatible = "microchip,mcp230xx";
-        status = "okay";
-        gpio-controller;
-        wakeup-source;
-        reg = <0x20>;
-        #gpio-cells = <2>;
-        ngpios = <16>;
-        int-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        label = "MCP23017";
-    };
-};
-
-&i2c1 {
-    status = "okay";
-
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
-    };
-};
