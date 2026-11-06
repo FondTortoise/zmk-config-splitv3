@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <zephyr/dt-bindings/adc/adc.h>
 
 / {
     chosen {
@@ -8,12 +7,6 @@
         zmk,battery = &splitv3_battery;
     };
 
-    splitv3_battery: splitv3_battery {
-        compatible = "zmk,battery-voltage-divider";
-        io-channels = <&adc 5>;
-        output-ohms = <100000>;
-        full-ohms = <200000>;
-    };
 
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
