@@ -4,16 +4,22 @@
     chosen {
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
-        zmk,battery = &vbatt;
+        zmk,battery = &splitv3_battery;
     };
 
+    splitv3_battery: splitv3_battery {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 5>;
+        output-ohms = <100000>;
+        full-ohms = <200000>;
+    };
 
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "default_kscan";
         diode-direction = "col2row";
 
-        row-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        row-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&gpio0 02 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -43,4 +49,9 @@
                          RC(5, 1) 
         >;
     };
+};
+
+/* Enable the nRF52840 ADC */
+&adc {
+    status = "okay";
 };
