@@ -1,7 +1,23 @@
 #include <dt-bindings/led/led.h>
 
 &pinctrl {
+
     status = "okay";
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 31)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 29)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 31)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 29)>;
+            low-power-enable;
+        };
+    };
+    
     i2c1_default: i2c1_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
@@ -16,6 +32,17 @@
             low-power-enable;
         };
     };
+};
+
+
+&i2c0 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    wakeup-source;
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 };
 
 &i2c1 {
