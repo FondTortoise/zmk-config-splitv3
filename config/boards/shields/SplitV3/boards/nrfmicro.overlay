@@ -91,7 +91,6 @@
 };
 
 / {
-
     zmk_ext_power {
         compatible = "zmk,ext-power-generic";
         control-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>; /* choose an unused pin and polarity */
