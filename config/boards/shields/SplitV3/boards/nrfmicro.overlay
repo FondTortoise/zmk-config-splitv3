@@ -21,24 +21,13 @@
 }; 
 
 &i2c0 {
-	status = "okay";
-	compatible = "nordic,nrf-twi";
+    compatible = "nordic,nrf-twim";
+    status = "okay";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
-	oled: sh1106@3c {
-        compatible = "sinowealth,sh1106";
-        reg = <0x3c>;
-        width = <129>;
-        height = <64>;
-        segment-offset = <2>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;
-        com-invdir;
-        inversion-on;
-        prechargep = <0x22>;
-	};
+    pinctrl-names = "default", "sleep";
+    wakeup-source;
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 };
 
 / {
