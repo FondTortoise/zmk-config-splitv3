@@ -21,3 +21,4 @@
 include:
   - board: nrfmicro_13
     shield: SplitV3
+    snippet: zmk-usb-logging
