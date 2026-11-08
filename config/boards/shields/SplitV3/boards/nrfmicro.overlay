@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/i2c/i2c.h>
-
+/*
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
@@ -34,4 +34,4 @@
         compatible = "zmk,ext-power-generic";
         control-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>; 
     };
-};
+};*/
