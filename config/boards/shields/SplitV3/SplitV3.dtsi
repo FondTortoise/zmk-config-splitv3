@@ -7,7 +7,7 @@
         zmk,matrix_transform = &default_transform;
         zmk,battery = &vbatt;
         zephyr,display = &oled;
-        zmk,physical-layout = &layout;
+        zmk,physical-layout = &physical_layout0;
     };
 
     vbatt: vbatt {
@@ -16,7 +16,6 @@
 
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "kscan";
         diode-direction = "col2row";
         wakeup-source;
 
@@ -43,7 +42,7 @@
         >;
     };
 
-    layout: layout {
+    physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Split 6x7";
         transform = <&default_transform>;
