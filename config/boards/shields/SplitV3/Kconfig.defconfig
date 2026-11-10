@@ -1,9 +1,22 @@
-if SHIELD_SPLITV3
+if SHIELD_SPLITV3_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "SplitV3"
+    default "SplitV3Left"
 
 config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif
+
+if SHIELD_SPLITV3_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "SplitV3Right"
+
+config ZMK_POINTING
     default y
 
 endif
