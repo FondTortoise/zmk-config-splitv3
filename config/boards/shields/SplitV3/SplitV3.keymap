@@ -8,7 +8,8 @@
 #define DEFAULT 0
 #define SETTINGS 1
 
-behaviors {
+/ {
+        behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -16,10 +17,8 @@ behaviors {
             flavor = "tap-preferred";
             require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
+                };
         };
-    };
-
-/ {
         keymap {
                 compatible = "zmk,keymap";
 
