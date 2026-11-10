@@ -42,9 +42,8 @@
                                                              RC(5, 5)                   RC(5, 8)
         >;
     };
-};
-
-layout: layout {
+    
+    layout: layout {
         compatible = "zmk,physical-layout";
         display-name = "Split 6x7";
         transform = <&transform>;
@@ -126,6 +125,7 @@ layout: layout {
             , <&key_physical_attrs 200 100  847    615       345   947   665>
             ;
     };
+};
 
 &i2c0 {
 	status = "okay";
