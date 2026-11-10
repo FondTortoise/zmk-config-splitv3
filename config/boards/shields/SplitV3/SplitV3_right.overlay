@@ -1,6 +1,6 @@
 #include  "SplitV3.dtsi"
 
-&transform {
+&default_transform {
     col-offset = <7>;
 };
 
