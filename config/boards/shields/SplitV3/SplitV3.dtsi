@@ -15,10 +15,10 @@
     };
 
     default_kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "default_kscan";
-        diode-direction = "col2row";
-        wakeup-source;
+        compatible = "zmk,physical-layout";
+        display-name = "Split 6x7";
+        transform = <&default_transform>;
+        kscan = <&default_kscan>;
 
         row-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
                     <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -46,7 +46,7 @@
 
 layout: layout {
         compatible = "zmk,physical-layout";
-        display-name = "Split Ortho 4x6";
+        display-name = "Split 6x7";
         transform = <&transform>;
         kscan = <&kscan>;
 
