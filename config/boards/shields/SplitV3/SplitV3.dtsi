@@ -3,8 +3,8 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan;
-        zmk,matrix_transform = &transform;
+        zmk,kscan = &default_kscan;
+        zmk,matrix_transform = &default_transform;
         zmk,battery = &vbatt;
         zephyr,display = &oled;
         zmk,physical-layout = &layout;
@@ -14,7 +14,7 @@
         compatible = "zmk,battery-nrf-vddh";
     };
 
-    kscan: kscan {
+    default_kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "kscan";
         diode-direction = "col2row";
@@ -28,7 +28,7 @@
                     <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
-    transform: matrix_transform {
+    default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <6>;
         columns = <14>;
@@ -42,12 +42,12 @@
                                                              RC(5, 5)                   RC(5, 8)
         >;
     };
-    
+
     layout: layout {
         compatible = "zmk,physical-layout";
         display-name = "Split 6x7";
-        transform = <&transform>;
-        kscan = <&kscan>;
+        transform = <&default_transform>;
+        kscan = <&default_kscan>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 150 100    0    50       0     0     0>
