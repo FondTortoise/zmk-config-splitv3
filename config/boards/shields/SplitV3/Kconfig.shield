@@ -1,2 +1,5 @@
-config SHIELD_SPLITV3
-    def_bool $(shields_list_contains,SplitV3)
+config SHIELD_SPLITV3_LEFT
+    def_bool $(shields_list_contains,SplitV3_left)
+
+config SHIELD_SPLITV3_RIGHT
+    def_bool $(shields_list_contains,SplitV3_right)

@@ -3,6 +3,11 @@ if SHIELD_SPLITV3
 config ZMK_KEYBOARD_NAME
     default "SplitV3"
 
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
 endif
 
 if ZMK_DISPLAY
@@ -33,5 +38,12 @@ config LV_Z_BITS_PER_PIXEL
 choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
 endchoice
+
+endif
+
+if SHIELD_SPLITV3_LEFT || SHIELD_SplitV3_RIGHT
+
+config ZMK_SPLIT
+    default y
 
 endif
