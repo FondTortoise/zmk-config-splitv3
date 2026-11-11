@@ -11,16 +11,6 @@ config ZMK_POINTING
 
 endif
 
-if SHIELD_SPLITV3_RIGHT
-
-config ZMK_KEYBOARD_NAME
-    default "SplitV3Right"
-
-config ZMK_POINTING
-    default y
-
-endif
-
 if ZMK_DISPLAY
 
 config I2C
@@ -52,7 +42,7 @@ endchoice
 
 endif
 
-if SHIELD_SPLITV3_LEFT || SHIELD_SplitV3_RIGHT
+if SHIELD_SPLITV3_LEFT || SHIELD_SPLITV3_RIGHT
 
 config ZMK_SPLIT
     default y
