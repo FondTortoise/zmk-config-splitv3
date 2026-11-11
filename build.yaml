@@ -25,5 +25,5 @@ include:
     snippet: zmk-usb-logging
   - board: nrfmicro_13
     shield: SplitV3_right
-  - board: nice_nano//zmk
+  - board: nrfmicro_13
     shield: settings_reset
