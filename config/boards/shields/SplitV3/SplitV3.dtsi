@@ -6,11 +6,26 @@
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
         zmk,battery = &vbatt;
+        zmk,encoder = &default_encoder;
         zmk,physical-layout = &physical_layout0;
     };
 
     vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
+    };
+
+    default_encoder: encoder {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&default_encoder>;
+        triggers-per-rotation = <20>;
     };
 
     default_kscan: kscan {
